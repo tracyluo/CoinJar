@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FactoryRules\BestBuyCoinJar.csproj">
+    <ProjectReference Include="..\BestBuyCoinJar\BestBuyCoinJar.csproj">
       <Project>{c966a609-4a5f-4d32-a6a3-53a28d16158d}</Project>
       <Name>BestBuyCoinJar</Name>
     </ProjectReference>
