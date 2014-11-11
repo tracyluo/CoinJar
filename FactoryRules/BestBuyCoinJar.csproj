@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C966A609-4A5F-4D32-A6A3-53A28D16158D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BestBuyCoinJar</RootNamespace>
+    <AssemblyName>FactoryRules</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CoinJar\USCoinJar.cs" />
+    <Compile Include="Coin\CACoin.cs" />
+    <Compile Include="Coin\CAPenny.cs" />
+    <Compile Include="Coin\USCoin.cs" />
+    <Compile Include="Coin\USDime.cs" />
+    <Compile Include="Coin\USDollar.cs" />
+    <Compile Include="Coin\USHalfDollar.cs" />
+    <Compile Include="Coin\USNikel.cs" />
+    <Compile Include="Coin\USPenny.cs" />
+    <Compile Include="Coin\USQuarter.cs" />
+    <Compile Include="Convectors\CoinValueConvectorUSDollar.cs" />
+    <Compile Include="Convectors\CoinVolumeConvectorFluidOunces.cs" />
+    <Compile Include="Exceptions\CountryCodeException.cs" />
+    <Compile Include="Coin\ICoin.cs" />
+    <Compile Include="CoinJar\ICoinJar.cs" />
+    <Compile Include="Convectors\ICoinValueConvector.cs" />
+    <Compile Include="Convectors\ICoinVolumeConvector.cs" />
+    <Compile Include="Exceptions\OverFlowingException.cs" />
+    <Compile Include="RulesFactory\FactoryCreator\AbstractCoinJarRuleSets.cs" />
+    <Compile Include="RulesFactory\FactoryCreator\USCoinJarRuleSets.cs" />
+    <Compile Include="RulesFactory\Product\AbstractCoinJarRule.cs" />
+    <Compile Include="RulesFactory\Product\MaxVolumeRule.cs" />
+    <Compile Include="RulesFactory\Product\USCoinRule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
