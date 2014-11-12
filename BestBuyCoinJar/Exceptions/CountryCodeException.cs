@@ -2,6 +2,9 @@
 
 namespace BestBuyCoinJar
 {
+    /// <summary>
+    /// NotUSCoinException
+    /// </summary>
     public class NotUSCoinException: Exception
     {
         public NotUSCoinException()

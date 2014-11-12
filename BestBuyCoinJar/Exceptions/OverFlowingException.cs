@@ -2,6 +2,9 @@
 
 namespace BestBuyCoinJar
 {
+    /// <summary>
+    /// OverFlowingException
+    /// </summary>
     public class OverflowingException: Exception
     {
         public OverflowingException()

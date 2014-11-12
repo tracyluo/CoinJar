@@ -7,17 +7,24 @@
     {
         public MaxVolumeRule(ICoinJar coinJar)
             : base(coinJar){}
-        
+        /// <summary>
+        /// Check whether the jar is overflowing after accepted the coin
+        /// </summary>
+        /// <param name="coin">A <see cref="ICoin"/> type representing a coin.</param>
+        /// <returns><paramref name="notOverFlowing"/></returns>
         public override bool CheckRule(ICoin coin)
         {
-            bool pass = true;
-            if (this._coinJar.CurrentVolumeInCubitCentimeter + coin.VolumeInCubicCentimetre > this._coinJar.MaximumVolumeInCubitCentimeter)
+            bool notOverFlowing = true;
+            if (this._coinJar.CurrentVolumeInCubicCentimeter + coin.VolumeInCubicCentimeter > this._coinJar.MaximumVolumeInCubicCentimeter)
             {
-                pass = false;
+                notOverFlowing = false;
             }
-            return pass;
+            return notOverFlowing;
         }
-
+        
+        /// <summary>action when violate MaxVolumeRule</summary>
+        /// <exception cref="OverflowingException">
+        /// </exception>
         public override void ActionForViolation()
         {
             throw new OverflowingException();

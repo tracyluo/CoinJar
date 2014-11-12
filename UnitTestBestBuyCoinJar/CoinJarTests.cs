@@ -25,7 +25,7 @@ namespace UnitTestCoinJar
         {
             //assign
             USCoinJar usCoinJar = new USCoinJar();
-            double extendMaxVol = usCoinJar.MaximumVolumeInCubitCentimeter + 1 ;
+            double extendMaxVol = usCoinJar.MaximumVolumeInCubicCentimeter + 1 ;
             USCoin testCoin = new USCoin(extendMaxVol, 100);
             //arrange
             usCoinJar.AcceptCoin(testCoin);
@@ -39,9 +39,9 @@ namespace UnitTestCoinJar
             USCoinJar usCoinJar = new USCoinJar();
             USPenny usPenny = new USPenny();
             //arrange
-            double expect = usPenny.VolumeInCubicCentimetre;
+            double expect = usPenny.VolumeInCubicCentimeter;
             usCoinJar.AcceptCoin(usPenny);
-            double actual = usCoinJar.CurrentVolumeInCubitCentimeter;
+            double actual = usCoinJar.CurrentVolumeInCubicCentimeter;
             //assert
             Assert.AreEqual(expect, actual);
         }
@@ -54,10 +54,10 @@ namespace UnitTestCoinJar
             USPenny usPenny = new USPenny();
             USDollar usDollar = new USDollar();
             //arrange
-            double expect = usPenny.VolumeInCubicCentimetre + usDollar.VolumeInCubicCentimetre;
+            double expect = usPenny.VolumeInCubicCentimeter + usDollar.VolumeInCubicCentimeter;
             usCoinJar.AcceptCoin(usPenny);
             usCoinJar.AcceptCoin(usDollar);
-            double actual = usCoinJar.CurrentVolumeInCubitCentimeter;
+            double actual = usCoinJar.CurrentVolumeInCubicCentimeter;
             //assert
             Assert.AreEqual(expect, actual);
         }
@@ -120,7 +120,7 @@ namespace UnitTestCoinJar
             usCoinJar.AcceptCoin(usPenny);
             usCoinJar.AcceptCoin(usDollar);
             usCoinJar.Reset();
-            double actual = usCoinJar.CurrentVolumeInCubitCentimeter;
+            double actual = usCoinJar.CurrentVolumeInCubicCentimeter;
             //assert
             Assert.AreEqual(expect, actual);
         }

@@ -2,6 +2,12 @@
 {
     public class CAPenny : CACoin
     {
-        public CAPenny() : base(3.4, 1) { }
+        //this info comes from internet       
+        private const double VolumeInCubicCentimeterForPeny = 0.34;
+        private const double ValueInCentForPeny = 1;
+        /// <summary>
+        /// Constructor for CAPenny, set the volume and value for CAPenny
+        /// </summary>
+        public CAPenny() : base(VolumeInCubicCentimeterForPeny, ValueInCentForPeny) { }
     }
 }
